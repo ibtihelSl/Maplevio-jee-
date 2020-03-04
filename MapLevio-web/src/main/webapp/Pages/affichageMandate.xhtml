@@ -1,0 +1,97 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	template="/template/layoutadmin.xhtml">
+	<ui:define name="content">
+	<h:head>
+	
+	</h:head>
+     	<h2 id="h2">Resources:<a class="anchorjs-link" href="#h2.-bootstrap-heading"><span class="anchorjs-icon"></span></a></h2>
+
+
+<h:form >
+ <div class="panel panel-warning" data-widget="{&quot;draggable&quot;: &quot;false&quot;}" data-widget-static="">
+				<div class="panel-body no-padding">
+				<h:dataTable value="#{mandateBean.geMandates()}" var="ma" border="1" class="table table-striped">
+						<thead>
+							<tr class="warning">
+								
+								<th>Date Debut </th>
+								<th>Date Fin </th>
+								<th>Liste Ressource </th>
+								<th>Liste Projects</th>
+								<th>Action</th>
+								
+							</tr>
+						
+						
+        
+
+<tbody>
+
+<td>
+<h:column>
+<f:facet name="header" class="warning">
+ <h:outputText value="date Debut" />
+</f:facet>
+								
+<h:outputText value="#{ma.debutMandat}" />
+</h:column>
+</td>
+<td>
+<h:column>
+<f:facet name="header" class="warning">
+ <h:outputText value="dateFin" />
+</f:facet>
+<h:outputText value="#{ma.finMandat} " />
+</h:column>
+</td>
+<td>
+<h:column>
+<f:facet name="header" class="warning">
+ <h:outputText value="Liste de Ressources " />
+</f:facet>
+<h:outputText value="#{ma.mandatePK.resourceId}" />
+</h:column>	
+</td>
+<td>
+<h:column>
+<f:facet name="header" class="warning">
+ <h:outputText value="Liste des Projets" />
+</f:facet>							
+<h:outputText value="#{ma.mandatePK.projectId}}" />
+</h:column>
+</td>
+
+
+<td>
+<h:column>
+<f:facet name="header" class="warning">
+ <h:outputText value="Update" />
+</f:facet>
+<h:commandButton action="#{resourcesBean.MiseAJourRe(rous)}" value="Update" class="btn btn-primary"/> 
+</h:column>
+</td>
+<td>
+<h:column>
+<f:facet name="header" class="warning">
+ <h:outputText value="Delete" />
+</f:facet>
+<h:commandButton action="#{mandateBean.DeleteMandate(ma)}" value="Delete" class="btn btn-primary"/> 
+</h:column>
+</td>
+
+</tbody>
+</thead>
+</h:dataTable>
+</div>
+</div>
+</h:form>
+<br/>
+<br/>
+
+</ui:define>
+</ui:composition>
+
+

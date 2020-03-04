@@ -1,0 +1,50 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	template="/template/layoutadmin.xhtml">
+<ui:define name="title">Gérer Les Candidat Fr:</ui:define>
+<ui:define name="content">
+
+
+<h:form>
+
+<br/>
+<br/>
+  <div class="panel panel-warning" data-widget="{&quot;draggable&quot;: &quot;false&quot;}" data-widget-static="">
+				<div class="panel-body no-padding">
+<h:dataTable value="#{candidateBean.listesCandidateFr}" var="cand" border="1" class="table table-striped">
+<h:column>
+<f:facet name="header">
+  <h:outputText value="nom" />
+</f:facet>
+<h:outputText value="#{cand.nom}" />
+</h:column>
+<h:column>
+<f:facet name="header">
+  <h:outputText value="prenom" />
+</f:facet>
+<h:outputText value="#{cand.prenom}" />
+</h:column>
+<h:column>
+<f:facet name="header">
+  <h:outputText value="Etat" />
+</f:facet>
+<h:outputText value="#{cand.etat}" />
+</h:column>
+<h:column>
+<f:facet name="header">
+  <h:outputText value="Action" />
+</f:facet>
+<h:commandButton action="#{candidateBean.RefuserCondidature(cand.userId)}" value="Refuser" />
+ <h:commandButton action="#{passageBean.affecterFr(cand.userId)}" value="FixeDate" />
+ 
+ 
+</h:column> 
+</h:dataTable>
+</div>
+</div>
+</h:form>
+</ui:define>
+
+</ui:composition>

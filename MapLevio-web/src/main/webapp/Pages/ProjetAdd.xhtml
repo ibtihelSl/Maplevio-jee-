@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:f="http://java.sun.com/jsf/core">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	template="/template/layoutadmin.xhtml"
+	xmlns:p="http://primefaces.org/ui">
+<ui:define name="title">Ajouter un projet a un Employe:</ui:define>
+<ui:define name="content">
+
+	<h:form enctype="multipart/form-data">
+	<center>
+			<h1>Add new Project </h1>
+	<p:panel id="panel" header="Project Form" style="margin-bottom:10px;">
+	<p:messages id="messages" />
+        <h:panelGrid columns="1" cellpadding="4">
+        			
+<h:outputLabel for ="ClientCat" value=" client" ></h:outputLabel>
+ 
+<h:selectOneMenu value="#{projetBean.selectedEmployeId}">
+<f:selectItems value="#{projetBean.clis}" var="client" itemValue="#{client.userId}" itemLabel="#{client.nom} "/>
+</h:selectOneMenu>
+
+	
+	
+<h:outputLabel value="Description" />
+
+<h:inputText value="#{projetBean.description}" id="description" requiredMessage="fill the description" required="true" />
+	<p:message for="description" style="color: red"/>
+	
+<h:outputLabel value="projet name" />
+
+<h:inputText value="#{projetBean.projectName}" id="projetname" requiredMessage="fill the project name" required="true" />
+	<p:message for="projetname" style="color: red"/>
+	
+	
+<h:outputLabel  value="skills" />
+<h:inputText value="#{projetBean.competence}"  id="competence" requiredMessage="fill the skills field" required="true" />
+	<p:message for="competence" style="color: red"/>
+
+
+
+<h:outputLabel  value="date debut " />
+<h:inputText   id ="dateDebut" value="#{projetBean.dateDebut}">
+<f:convertDateTime pattern="dd-MM-yyyy"/>
+</h:inputText>
+
+
+
+<h:outputLabel value="date fin " />
+<h:inputText id ="dateFin" value="#{projetBean.dateFin}">
+<f:convertDateTime pattern="dd-MM-yyyy"/>
+</h:inputText>
+
+
+<h:commandButton action="#{projetBean.ajouterProjet()}" value="Add new prject" />
+
+<h:message for="btn"/> 
+
+
+
+
+</h:panelGrid>
+
+</p:panel>
+</center>
+</h:form>
+
+</ui:define>
+</ui:composition>
+</html>

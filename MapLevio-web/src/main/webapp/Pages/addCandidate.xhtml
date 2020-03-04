@@ -1,0 +1,71 @@
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+     template="/template/layoutadmin.xhtml">
+
+    
+    <ui:define name="content">
+
+        <h:form enctype="multipart/form-data">
+        
+  <h:panelGrid columns="3">      
+<h:outputText value="prenom"/>
+<h:inputText id ="prenom"  value="#{candidateBean1.prenom}" required="true"
+requiredMessage="required ***** "/>
+<h:message for="prenom" style="color:red"/>
+
+
+<h:outputText value="nom   :"/>
+<h:inputText id ="name" value="#{candidateBean1.nom}"  required="true"
+requiredMessage="required name "/>
+ <h:message for="name" style="color:red"/>
+
+<h:outputText value="email  :"/>
+<h:inputText    id ="email" value="#{candidateBean1.email}"  required="true"
+requiredMessage="required  email pattern ">
+
+<f:validateRegex pattern=".+\@.+\..+" />
+
+</h:inputText>
+<h:message for="email"  style="color:red"/>
+
+
+
+<h:outputText value="Password  :"/>
+<h:inputSecret id ="password"  value="#{candidateBean1.password}"/>
+<h:message for="password" style="color:red"/>
+
+<h:outputText value="Rue :"/>
+<h:inputText value="#{candidateBean1.rue}"/>
+
+<h:outputText value="Ville :"/>
+<h:inputText value="#{candidateBean1.ville}"/>
+
+<h:outputText value="pays  :"/>
+<h:inputText value="#{candidateBean1.pays}"/>
+
+<h:outputText value="codePostal"/>
+<h:inputText value="#{candidateBean1.codePostal}"/>
+
+
+	<h:outputText value="Photo"/>
+     <h:inputFile value="#{candidateBean1.file}"/>
+            
+    <h:outputText value="Ajouter cv "/>
+    <h:inputFile value="#{candidateBean1.cv}"/>
+    
+    
+    </h:panelGrid>
+    <h:commandButton value="Valider" action="#{candidateBean1.addEmploye()}"/>
+    
+    
+     
+     
+         
+        </h:form>
+   
+    
+    	</ui:define>
+</ui:composition>

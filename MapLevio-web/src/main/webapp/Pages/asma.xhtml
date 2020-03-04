@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:f="http://java.sun.com/jsf/core">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	template="/template/layoutadmin.xhtml"
+	xmlns:p="http://primefaces.org/ui">
+<ui:define name="title">Ajouter un projet a un Employe:</ui:define>
+<ui:define name="content">
+
+	<h:form enctype="multipart/form-data">
+	<center>
+			<h1>Add new Mandate </h1>
+	<p:panel id="panel" header="Mandate Form" style="margin-bottom:10px;">
+	<p:messages id="messages" />
+        <h:panelGrid columns="1" cellpadding="4">
+        			
+<h:outputLabel for ="ClientCat" value=" Project" ></h:outputLabel>
+ 
+<h:selectOneMenu value="#{mandateBean.selectedProjectId}">
+<f:selectItems value="#{mandateBean.projects}" var="Project" itemValue="#{Project.projectId}" itemLabel="#{Project.projectName} "/>
+</h:selectOneMenu>
+<h:outputLabel for ="Ressources" value=" Resource" ></h:outputLabel>
+ 
+<h:selectOneMenu value="#{mandateBean.selectedRessourceId}">
+<f:selectItems value="#{mandateBean.resources}" var="Resource" itemValue="#{Resource.userId}" itemLabel="#{Resource.nom} "/>
+</h:selectOneMenu>
+	
+	
+
+<h:outputLabel  value="date debut " />
+<h:inputText   id ="dateDebut" value="#{mandateBean.dateDebut}">
+<f:convertDateTime pattern="dd-MM-yyyy"/>
+</h:inputText>
+
+
+
+<h:outputLabel value="date fin " />
+<h:inputText id ="dateFin" value="#{mandateBean.dateFin}">
+<f:convertDateTime pattern="dd-MM-yyyy"/>
+</h:inputText>
+
+
+<h:commandButton action="#{mandateBean.ajouterMandate()}" value="Add new mandate" />
+
+<h:message for="btn"/> 
+
+
+
+
+</h:panelGrid>
+
+</p:panel>
+</center>
+</h:form>
+
+</ui:define>
+</ui:composition>
+</html>

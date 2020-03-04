@@ -1,0 +1,29 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	template="/template/layoutadmin.xhtml">
+<ui:define name="title">Affecter Date:</ui:define>
+<ui:define name="content">
+<h:form>
+<div class="panel panel-warning" data-widget="{&quot;draggable&quot;: &quot;false&quot;}" data-widget-static="">
+				<div class="panel-body no-padding">
+<h:panelGrid columns="2">
+<tr>
+<td>
+<h:inputText id="date" value="#{passageBean.date}" > 
+  <f:convertDateTime pattern="YYYY-mm-dd"/>
+  </h:inputText>
+</td>
+</tr>
+<tr>
+<td>
+<h:commandButton action="#{passageBean.affecter()}" value="Affecter" />
+</td>
+</tr>
+</h:panelGrid>
+</div>
+</div>
+</h:form>
+</ui:define>
+</ui:composition>

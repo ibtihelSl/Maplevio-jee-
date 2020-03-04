@@ -1,0 +1,73 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	template="/template/layout.xhtml">
+<ui:define name="title">Passer Test Technique:</ui:define>
+<ui:define name="content">
+<h:form>
+<h:panelGrid columns="2">
+<tr>
+
+<td><h:outputText value="#{passageBean.p.test.q1}" /></td>
+<td><h:selectOneRadio value = "#{passageBean.answer1}"> 
+   <f:selectItem itemValue = "True" itemLabel = "True" /> 
+   <f:selectItem itemValue = "False" itemLabel = "False" />
+</h:selectOneRadio> </td>
+
+<td><h:outputText value="#{passageBean.p.test.q2}" /></td>
+<td><h:selectOneRadio value = "#{passageBean.answer2}"> 
+   <f:selectItem itemValue = "True" itemLabel = "True" /> 
+   <f:selectItem itemValue = "False" itemLabel = "False" />
+</h:selectOneRadio> </td>
+<td><h:outputText value="#{passageBean.p.test.q3}" /></td>
+<td><h:selectOneRadio value = "#{passageBean.answer3}"> 
+   <f:selectItem itemValue = "True" itemLabel = "True" /> 
+   <f:selectItem itemValue = "False" itemLabel = "False" />
+</h:selectOneRadio> </td>
+<td><h:outputText value="#{passageBean.p.test.q4}" /></td>
+<td><h:selectOneRadio value = "#{passageBean.answer4}"> 
+   <f:selectItem itemValue = "True" itemLabel = "True" /> 
+   <f:selectItem itemValue = "False" itemLabel = "False" />
+</h:selectOneRadio> </td>
+<td><h:outputText value="#{passageBean.p.test.q5}" /></td>
+<td><h:selectOneRadio value = "#{passageBean.answer5}"> 
+   <f:selectItem itemValue = "True" itemLabel = "True" /> 
+   <f:selectItem itemValue = "False" itemLabel = "False" />
+</h:selectOneRadio> </td>
+<td><h:outputText value="#{passageBean.p.test.q6}" /></td>
+<td><h:selectOneRadio value = "#{passageBean.answer6}"> 
+   <f:selectItem itemValue = "True" itemLabel = "True" /> 
+   <f:selectItem itemValue = "False" itemLabel = "False" />
+</h:selectOneRadio> </td>
+<td><h:outputText value="#{passageBean.p.test.q7}" /></td>
+<td><h:selectOneRadio value = "#{passageBean.answer7}"> 
+   <f:selectItem itemValue = "True" itemLabel = "True" /> 
+   <f:selectItem itemValue = "False" itemLabel = "False" />
+</h:selectOneRadio> </td>
+<td><h:outputText value="#{passageBean.p.test.q8}" /></td>
+<td><h:selectOneRadio value = "#{passageBean.answer8}"> 
+   <f:selectItem itemValue = "True" itemLabel = "True" /> 
+   <f:selectItem itemValue = "False" itemLabel = "False" />
+</h:selectOneRadio> </td>
+<td><h:outputText value="#{passageBean.p.test.q9}" /></td>
+<td><h:selectOneRadio value = "#{passageBean.answer9}"> 
+   <f:selectItem itemValue = "True" itemLabel = "True" /> 
+   <f:selectItem itemValue = "False" itemLabel = "False" />
+</h:selectOneRadio> </td>
+<td><h:outputText value="#{passageBean.p.test.q10}" /></td>
+<td><h:selectOneRadio value = "#{passageBean.answer10}"> 
+   <f:selectItem itemValue = "True" itemLabel = "True" /> 
+   <f:selectItem itemValue = "False" itemLabel = "False" />
+</h:selectOneRadio> </td>
+</tr>
+<tr>
+<td>
+<h:commandButton action="#{passageBean.passerTest()}" value="Valider" />
+</td>
+</tr>
+</h:panelGrid>
+</h:form>
+</ui:define>
+
+</ui:composition>

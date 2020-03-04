@@ -1,0 +1,76 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	template="/template/layoutadmin.xhtml">
+	<ui:define name="content">
+	<h:head>
+	
+	</h:head>
+<ui:define name="title">Ajouter Mandates:</ui:define>
+     	<h2 id="h2">Mandates Archives:<a class="anchorjs-link" href="#h2.-bootstrap-heading"><span class="anchorjs-icon"></span></a></h2>
+
+<h:form>
+  <div class="panel panel-warning" data-widget="{&quot;draggable&quot;: &quot;false&quot;}" data-widget-static="">
+				<div class="panel-body no-padding">
+				<h:dataTable value="#{mandateBean.Getarchive()}" var="mand" border="1" class="table table-striped">
+						<thead>
+							<tr class="warning">
+								
+								<th>Date debut</th>
+								<th>Date fin </th>
+								<th>Resource </th>
+								<th>Project</th>
+								<th>Action</th>
+								
+							</tr>
+						
+						
+        
+
+<tbody>
+
+<td>
+<h:column>
+<f:facet name="header" class="warning">
+ <h:outputText value="Date Debut" />
+</f:facet>
+								
+<h:outputText value="#{mand.debutMandat}"/>
+</h:column>
+</td>
+
+<td>
+<h:column>
+<f:facet name="header" class="warning">
+ <h:outputText value="Date Fin" />
+</f:facet>
+<h:outputText value="#{mand.finMandat}" />
+</h:column>	
+</td>
+<td>
+<h:column>
+<f:facet name="header" class="warning">
+ <h:outputText value="Liste Ressource" />
+</f:facet>							
+<h:outputText value="#{mand.mandatePK.resourceId}" />
+</h:column>
+</td>
+<td>
+<h:column>
+<f:facet name="header" class="warning">
+ <h:outputText value="liste Projects" />
+</f:facet>
+								
+<h:outputText value="#{mand.mandatePK.projectId}" />
+</h:column>
+</td>
+
+</tbody>
+</thead>
+</h:dataTable>
+</div>
+</div>
+</h:form>
+</ui:define>
+</ui:composition>

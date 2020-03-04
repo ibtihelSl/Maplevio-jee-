@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	template="/template/layout.xhtml">
+<ui:define name="content">
+   		<ui:include src="/template/header.xhtml" />
+
+<body>
+	<ol class="breadcrumb justify-content-left">
+		<li class="breadcrumb-item">
+			<a href="index.html">Home</a>
+		</li>
+		<li class="breadcrumb-item active">Contact Us</li>
+	</ol>	
+	<!-- banner-text -->
+	<!-- contact -->
+	<div class="banner-bottom-wthree pt-lg-5 pt-md-3 pt-3">
+		<div class="inner-sec-w3ls pt-md-5 pt-md-3 pt-3">
+
+		<h3 class="tittle text-center mb-lg-5 mb-3">
+				<span>Get Intouch</span>Contact Us</h3>
+				
+								<div class="container">
+						<div class="address row mb-5">
+							<div class="col-lg-4 address-grid">
+								<div class="row address-info">
+									<div class="col-md-3 address-left text-center">
+										<i class="far fa-map"></i>
+									</div>
+									<div class="col-md-9 address-right text-left">
+										<h6 class="ad-info text-uppercase mb-2">Address</h6>
+										<p> Montréal, Québec
+		
+										</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-4 address-grid">
+								<div class="row address-info">
+									<div class="col-md-3 address-left text-center">
+										<i class="far fa-envelope"></i>
+									</div>
+									<div class="col-md-9 address-right text-left">
+										<h6 class="ad-info text-uppercase mb-2">Email</h6>
+										<p>Email :
+											<a href="mailto:example@email.com"> info@levio.ca</a>
+										</p>
+									</div>
+		
+								</div>
+							</div>
+							<div class="col-lg-4 address-grid">
+								<div class="row address-info">
+									<div class="col-md-3 address-left text-center">
+										<i class="fas fa-mobile-alt"></i>
+									</div>
+									<div class="col-md-9 address-right text-left">
+										<h6 class="ad-info text-uppercase mb-2">Phone</h6>
+										<p>514 600-5010</p>
+		
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+						<div class="container-fluid">
+				<div class="row">
+					
+					<div class="col-md-6 main_grid_contact">
+						<div class="form">
+							<h4 class="mb-4 text-left">Send us a message</h4>
+							<h:form id="form">
+							<div class="form-group">
+									<label class="my-2">Message Cible</label>
+									<h:selectOneMenu value="#{messageBean.selectedCible}">
+  									<f:selectItem  itemLabel="chose message cible : " itemValue=""/>
+  									<f:selectItems value="#{data.messageCibles}"/>
+									</h:selectOneMenu>
+									
+								</div>
+							<div class="form-group">
+									<label>Message Type</label>
+									<h:selectOneMenu value="#{messageBean.selectedType}">
+  									<f:selectItem  itemLabel="chose message type : " itemValue=""/>
+ 									 <f:selectItems value="#{data.messageType}"/>
+										</h:selectOneMenu>
+								</div>
+								
+							<div class="form-group">
+									<label>Message</label>
+									<h:inputTextarea value="#{messageBean.body}" />
+								</div>
+								
+							<div class="input-group1">
+								<h:commandButton id="btn" action="#{messageBean.EnvoyerMsg()}" value="Send"  class="form-control"/>
+								</div>
+						
+						</h:form>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+	
+
+
+</div>
+</div>
+</body>
+                        		<ui:insert src="/template/footer.xhtml"></ui:insert>
+
+</ui:define>
+</ui:composition>

@@ -1,0 +1,52 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	template="/template/layoutadmin.xhtml">
+	<ui:define name="content">
+	<h:head>
+	
+	</h:head>
+<ui:define name="title">Ajouter Resources:</ui:define>
+	
+<h:form>
+
+
+<br/>
+<br/>
+<br/>
+<div class="well1 white">
+ <div class="form-floating ng-pristine ng-invalid ng-invalid-required ng-valid-email ng-valid-url ng-valid-pattern" novalidate="novalidate" ng-submit="submit()">
+
+
+          <fieldset>
+            <div class="form-group">
+
+<h:outputText value="Date Debut" class="control-label" />
+<h:inputText value="#{congeBean.datedebut}" class="form-control1 ng-invalid ng-invalid-required ng-touched" ng-model="model.name">
+ <f:convertDateTime pattern="dd-MM-yyyy"/>
+  </h:inputText>
+</div>
+            <div class="form-group">
+
+<h:outputText value="date fin" class="control-label" />
+<h:inputText id="date" value="#{congeBean.datefin}" class="form-control1 ng-invalid ng-invalid-required ng-touched" ng-model="model.name"> 
+  <f:convertDateTime pattern="dd-MM-yyyy"/>
+  </h:inputText>
+  <h:message for="date" style="color:red"/>
+  </div>
+ <h:outputText id="a" value="#{param.id}" />
+
+   <div class="form-group">
+<h:commandButton action="#{congeBean.addconge()}" value="Add" class="btn btn-primary"/>
+ 
+</div>
+</fieldset>
+</div>
+</div>
+</h:form>
+<ui:insert src="/template/footer.xhtml"/>
+
+</ui:define>
+
+</ui:composition>

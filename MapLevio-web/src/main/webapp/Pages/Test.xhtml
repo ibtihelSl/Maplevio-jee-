@@ -1,0 +1,36 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	template="/template/layoutadmin.xhtml">
+<ui:define name="title">Gérer Les Tests:</ui:define>
+<ui:define name="content">
+<h:form>
+<br/>
+<br/>
+  <div class="panel panel-warning" data-widget="{&quot;draggable&quot;: &quot;false&quot;}" data-widget-static="">
+				<div class="panel-body no-padding">
+<h:dataTable value="#{testBean.listesTests}" var="test" border="1" class="table table-striped">
+<h:column>
+<f:facet name="header">
+  <h:outputText value="Type" />
+</f:facet>
+<h:outputText value="#{test.type}" />
+</h:column>
+
+
+<h:column>
+<f:facet name="header">
+  <h:outputText value="Action" />
+</f:facet>
+ <h:commandButton action="#{testBean.delete(test.testId)}" value="Delete" />
+
+ 
+</h:column> 
+</h:dataTable>
+</div>
+</div>
+</h:form>
+</ui:define>
+
+</ui:composition>

@@ -1,0 +1,101 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	template="/template/layoutadmin.xhtml">
+<ui:define name="title">crée Les Tests:</ui:define>
+<ui:define name="content">
+<h:form>
+
+<h:panelGrid columns="2">
+<tr>
+<td><h:outputText value="Type" /></td>
+<td>
+<h:selectOneMenu value="#{testBean.type1}">
+		<f:selectItem itemLabel="selectionner Votre Type" itemValue=""/>
+		<f:selectItem itemLabel="Technique" itemValue="0"/>
+		<f:selectItem itemLabel="Francais" itemValue="1"/>
+		</h:selectOneMenu>
+</td>
+<td><h:outputText value="q1" /></td>
+<td><h:inputText id="q1" value="#{testBean.q1}" /></td>
+<td><h:outputText value="Reponse1" /></td>
+<td><h:selectOneRadio value = "#{testBean.answer1}"> 
+   <f:selectItem itemValue = "True" itemLabel = "True" /> 
+   <f:selectItem itemValue = "False" itemLabel = "False" />
+</h:selectOneRadio> </td>
+<td><h:outputText value="q2" /></td>
+<td><h:inputText id="q2" value="#{testBean.q2}" /></td>
+<td><h:outputText value="Reponse2" /></td>
+<td><h:selectOneRadio value = "#{testBean.answer2}"> 
+   <f:selectItem itemValue = "True" itemLabel = "True" /> 
+   <f:selectItem itemValue = "False" itemLabel = "False" />
+</h:selectOneRadio> </td>
+<td><h:outputText value="q3" /></td>
+<td><h:inputText id="q3" value="#{testBean.q3}" /></td>
+<td><h:outputText value="Reponse3" /></td>
+<td><h:selectOneRadio value = "#{testBean.answer3}"> 
+   <f:selectItem itemValue = "True" itemLabel = "True" /> 
+   <f:selectItem itemValue = "False" itemLabel = "False" />
+</h:selectOneRadio> </td>
+<td><h:outputText value="q4" /></td>
+<td><h:inputText id="q4" value="#{testBean.q4}" /></td>
+<td><h:outputText value="Reponse4" /></td><td><h:selectOneRadio value = "#{testBean.answer4}"> 
+   <f:selectItem itemValue = "True" itemLabel = "True" /> 
+   <f:selectItem itemValue = "False" itemLabel = "False" />
+</h:selectOneRadio> </td>
+<td><h:outputText value="q5" /></td>
+<td><h:inputText id="q5" value="#{testBean.q5}" /></td>
+<td><h:outputText value="Reponse5" /></td>
+<td><h:selectOneRadio value = "#{testBean.answer5}"> 
+   <f:selectItem itemValue = "True" itemLabel = "True" /> 
+   <f:selectItem itemValue = "False" itemLabel = "False" />
+</h:selectOneRadio> </td>
+<td><h:outputText value="q6" /></td>
+<td><h:inputText id="q6" value="#{testBean.q6}" /></td>
+<td><h:outputText value="Reponse6" /></td>
+<td><h:selectOneRadio value = "#{testBean.answer6}"> 
+   <f:selectItem itemValue = "True" itemLabel = "True" /> 
+   <f:selectItem itemValue = "False" itemLabel = "False" />
+</h:selectOneRadio> </td>
+<td><h:outputText value="q7" /></td>
+<td><h:inputText id="q7" value="#{testBean.q7}" /></td>
+<td><h:outputText value="Reponse7" /></td>
+<td><h:selectOneRadio value = "#{testBean.answer7}"> 
+   <f:selectItem itemValue = "True" itemLabel = "True" /> 
+   <f:selectItem itemValue = "False" itemLabel = "False" />
+</h:selectOneRadio> </td>
+<td><h:outputText value="q8" /></td>
+<td><h:inputText id="q8" value="#{testBean.q8}" /></td>
+<td><h:outputText value="Reponse8" /></td>
+<td><h:selectOneRadio value = "#{testBean.answer8}"> 
+   <f:selectItem itemValue = "True" itemLabel = "True" /> 
+   <f:selectItem itemValue = "False" itemLabel = "False" />
+</h:selectOneRadio> </td>
+<td><h:outputText value="q9" /></td>
+<td><h:inputText id="q9" value="#{testBean.q9}" /></td>
+<td><h:outputText value="Reponse9" /></td>
+<td><h:selectOneRadio value = "#{testBean.answer9}"> 
+   <f:selectItem itemValue = "True" itemLabel = "True" /> 
+   <f:selectItem itemValue = "False" itemLabel = "False" />
+</h:selectOneRadio> </td>
+<td><h:outputText value="q10" /></td>
+<td><h:inputText id="q10" value="#{testBean.q10}" /></td>
+<td><h:outputText value="Reponse10" /></td>
+<td><h:selectOneRadio value = "#{testBean.answer10}"> 
+   <f:selectItem itemValue = "True" itemLabel = "True" /> 
+   <f:selectItem itemValue = "False" itemLabel = "False" />
+</h:selectOneRadio> </td>
+</tr>
+<tr>
+<td>
+<h:commandButton action="#{testBean.addTest()}" value="Ajouter Test" />
+</td>
+</tr>
+</h:panelGrid>
+
+
+</h:form>
+</ui:define>
+
+</ui:composition>

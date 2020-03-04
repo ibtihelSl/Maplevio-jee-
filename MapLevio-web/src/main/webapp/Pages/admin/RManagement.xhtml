@@ -1,0 +1,28 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	template="/template/template.xhtml">
+
+	<ui:define name="title">Resources information</ui:define>
+	<ui:define name="content">
+	
+	<h:panelGrid columns="2">
+	<h:outputText value="Number of all resources"/>
+    <h:outputText value="#{resourceMBean.nbrresources" />	
+	</h:panelGrid>
+	
+	<h:panelGrid columns="3">
+	<h:outputText value="Number of all employees"/>
+    <h:outputText value="#{resourceMBean.nbremployee}" />
+    <h:outputText value="#{resourceMBean.pourcentageemploye}" />	
+	</h:panelGrid>
+	
+	<h:panelGrid columns="3">
+	<h:outputText value="Number of all freelancers"/>
+    <h:outputText value="#{resourceMBean.nbrfreelancers" />	
+    <h:outputText value="#{resourceMBean.pourcentagefreelancer}" />
+	</h:panelGrid>
+
+	</ui:define>	
+</ui:composition>

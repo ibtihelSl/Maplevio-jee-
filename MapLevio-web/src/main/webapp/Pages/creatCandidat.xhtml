@@ -1,0 +1,44 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	template="/template/layout.xhtml">
+<ui:define name="title">Ajouter un Candidate:</ui:define>
+<ui:define name="content">
+<h:form>
+<h:panelGrid columns="2">
+<tr>
+<td><h:outputText value="Nom" /></td>
+<td><h:inputText id="nom" value="#{candidateBean.nom}" /></td>
+<td><h:outputText value="Pernom" /></td>
+<td><h:inputText id="prenom" value="#{candidateBean.prenom}" /></td>
+<td><h:outputText value="Email" /></td>
+<td><h:inputText id="email" value="#{candidateBean.email}" /></td>
+<td><h:outputText value="Password" /></td>
+<td><h:inputText id="password" value="#{candidateBean.password}" /></td>
+<td><h:outputText value="pays" /></td>
+<td><h:inputText id="pays" value="#{candidateBean.pays}" /></td>
+<td><h:outputText value="ville" /></td>
+<td><h:inputText id="ville" value="#{candidateBean.ville}" /></td>
+<td><h:outputText value="rue" /></td>
+<td><h:inputText id="rue" value="#{candidateBean.rue}" /></td>
+<td><h:outputText value="codepostal" /></td>
+<td><h:inputText id="codepostal" value="#{candidateBean.codepostal}" /></td>
+<td><h:outputText value="DateNaissance" /></td>
+<td>
+<h:inputText id="dateNaissance" value="#{candidateBean.dateNaissance}" > 
+  <f:convertDateTime pattern="YYYY-mm-dd"/>
+  </h:inputText>
+</td>
+
+</tr>
+<tr>
+<td>
+<h:commandButton action="#{candidateBean.AddCandidate()}" value="Ajouter Candidature" />
+</td>
+</tr>
+</h:panelGrid>
+</h:form>
+</ui:define>
+
+</ui:composition>

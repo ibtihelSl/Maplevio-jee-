@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	template="/template/layoutadmin.xhtml">
+<ui:define name="content">
+<h:head>
+</h:head>
+		     	<h2 id="h2">Messages:<a class="anchorjs-link" href="#h2.-bootstrap-heading"><span class="anchorjs-icon"></span></a></h2>
+		
+<h:form>
+ <div class="panel panel-warning" data-widget="{&quot;draggable&quot;: &quot;false&quot;}" data-widget-static="">
+				<div class="panel-body no-padding">
+<h:dataTable value="#{messageBean.GetAllMsgs()}" var="message" border="1" class="table table-striped">
+		
+			<thead>
+							<tr class="warning">
+								
+								<th>Object</th>
+								<th>Message Cible</th>
+								<th>Delivery Date</th>
+								<th>Message Body</th>
+								<th></th>
+								
+							</tr>
+		
+		
+		
+		
+		<tbody>
+		<td>
+		<h:column>
+			<f:facet name="header">
+				<h:outputText value="Object" />
+			</f:facet>
+			<h:outputText value="#{message.messageType}" />
+		</h:column>
+		</td>
+		
+		<td>
+		<h:column>
+			<f:facet name="header">
+				<h:outputText value="Message Cible" />
+			</f:facet>
+			<h:outputText value="#{message.messageCible}" />
+		
+		</h:column>
+		</td>
+		
+		<td>
+		<h:column>
+			<f:facet name="header">
+				<h:outputText value="Delivery Date" />
+			</f:facet>
+			<h:outputText value="#{message.dateEnvoi}" />
+		
+		</h:column>
+		</td>
+		<td>
+		<h:column>
+				
+		<h:commandButton id="btn" action="#{messageBean.GetBodyByIdMessage(message)}" value="Body"  class="btn btn-primary"/> 
+	
+		</h:column>
+		</td>
+		<td>
+		<h:column>
+				<f:facet name="header">
+				<h:outputText value="" />
+			</f:facet>
+		<h:commandButton id="btn1" action="#{messageBean.ArchiveMessage(message)}" value="Archive"  class="btn btn-primary"/> 
+	
+		</h:column>
+		</td>
+
+</tbody>
+</thead>
+</h:dataTable>
+</div>
+</div>
+</h:form>
+
+</ui:define>
+</ui:composition>

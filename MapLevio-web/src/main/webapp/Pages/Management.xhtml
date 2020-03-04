@@ -1,0 +1,136 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	template="/template/layoutadmin.xhtml">
+
+	<ui:define name="title">Management interface</ui:define>
+	<ui:define name="content">
+
+	 <h:panelGrid columns="3">
+	<h:outputText value="Number of all in progress projects"/>
+	
+	<h:outputText value="Number of all finished projects"/>
+	
+	<h:outputText value="Number of all projects "/>
+	
+	
+	<h:outputText value="#{managementBean.numberAllInProgressProjects}" />
+	<h:outputText value="#{ManagementBean.numberAllFinishedProjects}" />
+	<h:outputText value="#{ManagementBean.numberAllProjects}" />
+	</h:panelGrid>
+    
+<h:dataTable value="#{ManagementBean.mrcp}" var="project" border="1">
+		<h:column>
+			<f:facet name="header">
+			<h:outputText value="Pid" />
+			</f:facet>
+			<h:outputText value="#{project.projectId}" />
+		</h:column>
+		<h:column>
+			<f:facet name="header">
+			<h:outputText value="Project Name" />
+			</f:facet>
+			<h:outputText value="#{project.projectName}" />
+		</h:column>
+		<h:column>
+			<f:facet name="header">
+			<h:outputText value="Project type" />
+			</f:facet>
+			<h:outputText value="#{project.projectType}" />
+		</h:column>
+		<h:column>
+			<f:facet name="header">
+			<h:outputText value="Adress" />
+			</f:facet>
+			<h:outputText value="#{project.adresse.pays} #{project.adresse.ville}" />
+		</h:column>
+		<h:column>
+			<f:facet name="header">
+			<h:outputText value="Resources" />
+			</f:facet>
+			<h:outputText value="#{project.nbrResource}" />
+		</h:column>
+		<h:column>
+			<f:facet name="header">
+			<h:outputText value="Start Date" />
+			</f:facet>
+			<h:outputText value="#{project.dateDebut}" />
+		</h:column>
+		<h:column>
+			<f:facet name="header">
+			<h:outputText value="Finish Date" />
+			</f:facet>
+			<h:outputText value="#{project.dateFin}" />
+		</h:column>
+		
+	
+		
+		<h:column>
+			<f:facet name="header">
+				<h:outputText value="Handle" />
+			</f:facet>
+		</h:column>
+	
+		</h:dataTable>	
+		<br/>
+		
+		
+		<h:panelGrid columns="3">
+	<h:outputText value="Number of all Clients"/>
+	<h:outputText value="Number of all Private Clients"/>
+	<h:outputText value="Number of all Public Clients"/>
+	
+	
+	<h:outputText value="#{ManagementBean.numberAllClients}" />
+	<h:outputText value="#{ManagementBean.numberAllPrivateClients}" />
+	<h:outputText value="#{ManagementBean.numberAllPublicClients}" />
+	</h:panelGrid>
+	
+<h:dataTable value="#{managementBean.mac}" var="client" border="1">
+		<h:column>
+			<f:facet name="header">
+			<h:outputText value="cid" />
+			</f:facet>
+			<h:outputText value="#{client.userId}" />
+		</h:column>
+		<h:column>
+			<f:facet name="header">
+			<h:outputText value="Last name" />
+			</f:facet>
+			<h:outputText value="#{client.nom}" />
+		</h:column>
+		<h:column>
+			<f:facet name="header">
+			<h:outputText value="Name" />
+			</f:facet>
+			<h:outputText value="#{client.prenom}" />
+		</h:column>
+		<h:column>
+			<f:facet name="header">
+			<h:outputText value="Type" />
+			</f:facet>
+			<h:outputText value="#{client.clientType}" />
+		</h:column>
+		<h:column>
+			<f:facet name="header">
+			<h:outputText value="Category" />
+			</f:facet>
+			<h:outputText value="#{client.clientCategory}" />
+		</h:column>
+		<h:column>
+			<f:facet name="header">
+				<h:outputText value="Handle" />
+			</f:facet>
+		</h:column>
+	
+		</h:dataTable>
+		
+		
+	    
+		
+	</ui:define>
+	
+	
+	
+</ui:composition>

@@ -1,0 +1,20 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+
+<ui:define name="title">******************HOME************</ui:define>
+	<ui:define name="content">
+
+<h:outputText value="prenom"/>
+<h:outputText value="#{loginBean.candidate.prenom}"/>
+#{loginBean.candidate.nom} #{loginBean.candidate.prenom}
+<h:form>
+		<h:commandButton action="#{loginBean.doLogout()}" value="logout" />	
+	</h:form>
+</ui:define>
+	
+	
+	
+	</ui:composition>

@@ -1,0 +1,128 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	template="/template/layoutadmin.xhtml">
+<ui:define name="title">list des PROJECTS:</ui:define>
+<ui:define name="content">
+
+<h:form>
+ <li> list des PROJECTS</li>
+<br/>
+<br/>
+<div class="panel panel-warning" data-widget="{&quot;draggable&quot;: &quot;false&quot;}" data-widget-static="">
+				<div class="panel-body no-padding">
+<h:dataTable value="#{projetBean.GetAllProjet()}" var="cl" border="1" class="table table-striped">
+              
+ <f:facet name="header">
+           
+        </f:facet>
+	
+<h:column>
+<f:facet name="header">
+  <h:outputText value="name" />
+</f:facet>
+<h:outputText value="#{cl.projectName}" />
+</h:column>
+
+<h:column>
+<f:facet name="header">
+  <h:outputText value="description" />
+</f:facet>
+<h:outputText value="#{cl.description}" />
+</h:column>
+<br>
+</br>
+
+<h:column>
+<f:facet name="header">
+  <h:outputText value="date debut" />
+</f:facet>
+<h:outputText value="#{cl.dateDebut}" />
+</h:column>
+
+
+<h:column>
+<f:facet name="header">
+  <h:outputText value="date fin" />
+</f:facet>
+<h:outputText value="#{cl.dateFin}" />
+</h:column>
+
+
+
+
+
+<h:column>
+<f:facet name="header">
+  <h:outputText value="Action" />
+</f:facet>
+
+<h:commandButton action="#{projetBean.ModifierCl(cl)}" value="Modifier" /> 
+<h:commandButton action="#{projetBean.Delete(cl.projectId)}" value="Supprimer" /> 
+
+</h:column>
+
+
+</h:dataTable>
+
+<br/>
+<br/>
+<br/>
+</div>
+</div>
+
+</h:form>
+
+<h:panelGrid>
+
+<h:form id="form">
+	
+
+<h:outputText value="Description" />
+
+<h:inputText value="#{projetBean.description}" />
+
+<br>
+</br>
+
+<h:outputText value="projet name" />
+
+<h:inputText value="#{projetBean.projectName}" />
+<br>
+</br>
+
+
+<h:outputText value="competence" />
+<h:inputText value="#{projetBean.competence}" />
+<br>
+</br>
+
+
+
+
+<h:outputText value="date debut " />
+<h:inputText id ="dateDebut" value="#{projetBean.dateDebut}">
+<f:convertDateTime pattern="dd-MM-yyyy"/>
+</h:inputText>
+<br>
+</br>
+
+<h:outputText value="date fin " />
+<h:inputText id ="dateFin" value="#{projetBean.dateFin}">
+<f:convertDateTime pattern="dd-MM-yyyy"/>
+</h:inputText>
+
+<br>
+</br>
+
+<h:commandButton action="#{projetBean.mettreaAjourProject()}" value="Apply" />
+
+</h:form>
+</h:panelGrid>
+
+<br/>
+<br/>
+<br/>
+</ui:define>
+</ui:composition>

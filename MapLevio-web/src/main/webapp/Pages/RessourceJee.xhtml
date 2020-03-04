@@ -1,0 +1,112 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	template="/template/layoutadmin.xhtml">
+	<ui:define name="content">
+	<h:head>
+	
+	</h:head>
+<ui:define name="title">Ajouter Resources:</ui:define>
+
+<h:form>
+  <div class="panel panel-warning" data-widget="{&quot;draggable&quot;: &quot;false&quot;}" data-widget-static="">
+				<div class="panel-body no-padding">
+				<h:dataTable value="#{resourcesBean.GetResourcesJee()}" var="rous" border="1" class="table table-striped">
+						<thead>
+							<tr class="warning">
+								
+								<th>First Name</th>
+								<th>Last Name</th>
+								<th>Mail</th>
+								<th>BirthDay</th>
+								<th>Action</th>
+								
+							</tr>
+						
+				
+<tbody>
+
+<td>
+<h:column>
+<f:facet name="header" class="warning">
+ <h:outputText value="Email" />
+</f:facet>
+								
+<h:outputText value="#{rous.email}" />
+</h:column>
+</td>
+<td>
+<h:column>
+<f:facet name="header" class="warning">
+ <h:outputText value="Nom" />
+</f:facet>
+<h:outputText value="#{rous.nom} #{rous.prenom}" />
+</h:column>
+</td>
+<td>
+<h:column>
+<f:facet name="header" class="warning">
+ <h:outputText value="BirthDay" />
+</f:facet>
+<h:outputText value="#{rous.dateNaissance}" />
+</h:column>	
+</td>
+<td>
+<h:column>
+<f:facet name="header" class="warning">
+ <h:outputText value="Address" />
+</f:facet>							
+<h:outputText value="#{rous.adresse.rue} #{rous.adresse.ville} #{rous.adresse.pays} #{rous.adresse.codePostal}" />
+</h:column>
+</td>
+<td>
+<h:column>
+<f:facet name="header" class="warning">
+ <h:outputText value="seniority" />
+</f:facet>
+								
+<h:outputText value="#{rous.seniority}" />
+</h:column>
+</td>
+<td>
+<h:column>
+<f:facet name="header" class="warning">
+ <h:outputText value="Skill" />
+</f:facet>							
+<h:outputText value="#{rous.competance}" />
+</h:column>
+</td>
+<td>
+<h:column>
+<f:facet name="header" class="warning">
+ <h:outputText value="Resource Type" />
+</f:facet>				
+<h:outputText value="#{rous.resourceType}" />
+</h:column>
+</td>
+<td>
+<h:column>
+<f:facet name="header" class="warning">
+ <h:outputText value="Resource State" />
+</f:facet>							
+<h:outputText value="#{rous.resourceState}" />
+</h:column>
+</td>
+<td>
+<h:column>
+<f:facet name="header" class="warning">
+ <h:outputText value="Delete" />
+</f:facet>
+<h:commandButton action="#{resourcesBean.DeleteResources(rous.userId)}" value="Delete" /> 
+</h:column>
+</td>
+
+</tbody>
+</thead>
+</h:dataTable>
+</div>
+</div>
+</h:form>
+</ui:define>
+</ui:composition>

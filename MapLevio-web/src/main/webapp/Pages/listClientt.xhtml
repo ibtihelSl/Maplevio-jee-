@@ -1,0 +1,51 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	template="/template/layoutadmin.xhtml">
+<ui:define name="title">All projects:</ui:define>
+<ui:define name="content">
+
+
+
+<h:form>
+ <li> list des clients</li>
+<br/>
+<br/>
+<div class="panel panel-warning" data-widget="{&quot;draggable&quot;: &quot;false&quot;}" data-widget-static="">
+				<div class="panel-body no-padding">
+<h:dataTable value="#{projetBean.GetAllClient()}" var="cl" border="1" class="table table-striped">
+              
+ <f:facet name="header">
+           
+        </f:facet>
+	
+<h:column>
+<f:facet name="header">
+ 
+</f:facet>
+<h:outputText value="#{cl.nom}" />
+</h:column>
+
+
+<h:column>
+<f:facet name="header">
+ 
+</f:facet>
+<h:outputText value="#{cl.clientType}" />
+</h:column>
+
+
+
+</h:dataTable>
+</div>
+</div>
+
+</h:form>
+
+
+<br/>
+<br/>
+<br/>
+</ui:define>
+</ui:composition>

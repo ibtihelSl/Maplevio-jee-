@@ -1,0 +1,125 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	template="/template/layoutadmin.xhtml">
+
+	<ui:define name="title">******************HOME************</ui:define>
+	<ui:define name="content">
+	<h3 class="tiles-head">
+	
+
+	Bienvenue #{loginBean.candidate.nom} #{loginBean.candidate.prenom}  Votre état actuel est : #{loginBean.candidate.etat} 
+			</h3>
+		<h:form>
+		<div class="bg-warning">
+		<h:commandButton action="#{loginBean.doLogout()}" value="logout"  class="btn btn-primary submit mb-4" />	
+		</div>
+		</h:form>
+	   <div class="login px-4 mx-auto mw-100">
+	   
+	   <H3 class="tittle text-center mb-lg-5 mb-3">
+	   Si vous voulez appliquer des changements veuillez cliquer sur le boutton " Modifier " 
+	   </H3>
+	
+   <h:form enctype="multipart/form-data">
+    <h:panelGroup>
+       <h:commandButton action="#{candidateBean1.modifier(loginBean.candidate)}" value="modifier" class="btn btn-primary submit mb-4" />	
+    
+    </h:panelGroup>	
+   
+      
+  
+   <div class="form-group">
+   <label class="mb-2">Prenom </label>
+   <input type="text" value=" #{loginBean.candidate.prenom}" disabled="disabled"></input>
+   <h:inputText value="#{candidateBean1.prenom}"/>
+   </div>
+
+  <div class="form-group">
+  <label class="mb-2">Nom</label>
+  <input type="text" value=" #{loginBean.candidate.nom}" disabled="disabled"></input>
+  <h:inputText value="#{candidateBean1.nom}"/>
+  </div>
+
+ <div class="form-group">
+  <label class="mb-2">Email </label>
+  <input type="text" value=" #{loginBean.candidate.email}" disabled="disabled"></input>
+<h:inputText value="#{candidateBean.email}"/>
+</div>  
+
+
+
+ <div class="form-group">
+  <label class="mb-2">Mot de passe</label>
+    <input type="password" value=" #{loginBean.candidate.password}" disabled="disabled"></input>
+  
+<h:inputText value="#{candidateBean1.password}"/>
+</div>
+
+ <div class="form-group">
+<label class="mb-2">Adresse</label>
+  <input type="text" value=" #{loginBean.candidate.adresse.rue}" disabled="disabled"></input>
+<h:inputText value="#{candidateBean1.rue}"/>
+</div>
+
+ <div class="form-group">
+  <label class="mb-2">Ville</label>
+  <input type="text" value=" #{loginBean.candidate.adresse.ville}" disabled="disabled"></input>
+<h:inputText value="#{candidateBean1.ville}"/>
+</div>
+
+ <div class="form-group">
+   <h:panelGroup>  
+  <label class="mb-2">Pays</label>
+  <input type="text" value=" #{loginBean.candidate.adresse.pays}" disabled="disabled"></input>
+</h:panelGroup>
+ <h:inputText value="#{candidateBean1.pays}"/>
+</div>
+
+ <div class="form-group">
+  <label class="mb-2">Code postal</label>
+  <input type="text" value=" #{loginBean.candidate.adresse.codePostal}" disabled="disabled"></input>
+  <h:inputText value="#{candidateBean1.codePostal}"/>
+ </div>
+
+ <div class="form-group">
+  <label class="mb-2">Photo</label>
+
+ <h:inputFile value="#{candidateBean1.file}">
+            <f:passThroughAttribute name="accept" value="image/png"/>
+  </h:inputFile>
+            
+ </div>
+            
+ <div class="form-group">
+          <label class="mb-2">CV</label>            
+         
+ 			<div class="can-btn">
+          <h:inputFile value="#{candidateBean1.cv}">
+          <f:passThroughAttribute name="accept" value="image/txt"/>
+          </h:inputFile>
+          </div>
+          
+  </div>
+      
+  
+
+
+    <h:panelGroup rendered="#{candidateBean1.upladed}" layout="block" style="text-align: center">
+    <img src="#{loginBean.candidate.image}.jpg" height="400" width="400" style="border:3px solid #DDD;"/>
+   
+  
+   </h:panelGroup>
+    <h:panelGroup>   
+    <h:commandButton value="Confirmer changements" action="#{candidateBean1.refresh()}"/>
+    </h:panelGroup>
+         
+        </h:form>
+  </div>    
+
+	</ui:define>
+	
+
+</ui:composition>
+

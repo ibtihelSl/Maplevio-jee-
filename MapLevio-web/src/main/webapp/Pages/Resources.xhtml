@@ -1,0 +1,230 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	template="/template/layoutadmin.xhtml">
+	<ui:define name="content">
+	<h:head>
+	
+	</h:head>
+     	<h2 id="h2">Resources:<a class="anchorjs-link" href="#h2.-bootstrap-heading"><span class="anchorjs-icon"></span></a></h2>
+
+
+<h:form >
+ <div class="panel panel-warning" data-widget="{&quot;draggable&quot;: &quot;false&quot;}" data-widget-static="">
+				<div class="panel-body no-padding">
+				<h:dataTable value="#{resourcesBean.GetALLResources()}" var="rous" border="1" class="table table-striped">
+						<thead>
+							<tr class="warning">
+								
+								<th>First Name</th>
+								<th>Last Name</th>
+								<th>Mail</th>
+								<th>BirthDay</th>
+								<th>Action</th>
+								
+							</tr>
+						
+						
+        
+
+<tbody>
+
+<td>
+<h:column>
+<f:facet name="header" class="warning">
+ <h:outputText value="Email" />
+</f:facet>
+								
+<h:outputText value="#{rous.email}" />
+</h:column>
+</td>
+<td>
+<h:column>
+<f:facet name="header" class="warning">
+ <h:outputText value="Nom" />
+</f:facet>
+<h:outputText value="#{rous.nom} #{rous.prenom}" />
+</h:column>
+</td>
+<td>
+<h:column>
+<f:facet name="header" class="warning">
+ <h:outputText value="BirthDay" />
+</f:facet>
+<h:outputText value="#{rous.dateNaissance}" />
+</h:column>	
+</td>
+<td>
+<h:column>
+<f:facet name="header" class="warning">
+ <h:outputText value="Address" />
+</f:facet>							
+<h:outputText value="#{rous.adresse.rue} #{rous.adresse.ville} #{rous.adresse.pays} #{rous.adresse.codePostal}" />
+</h:column>
+</td>
+<td>
+<h:column>
+<f:facet name="header" class="warning">
+ <h:outputText value="seniority" />
+</f:facet>
+								
+<h:outputText value="#{rous.seniority}" />
+</h:column>
+</td>
+<td>
+<h:column>
+<f:facet name="header" class="warning">
+ <h:outputText value="Skill" />
+</f:facet>							
+<h:outputText value="#{rous.competance}" />
+</h:column>
+</td>
+<td>
+<h:column>
+<f:facet name="header" class="warning">
+ <h:outputText value="Resource Type" />
+</f:facet>				
+<h:outputText value="#{rous.resourceType}" />
+</h:column>
+</td>
+<td>
+<h:column>
+<f:facet name="header" class="warning">
+ <h:outputText value="Resource State" />
+</f:facet>							
+<h:outputText value="#{rous.resourceState}" />
+</h:column>
+</td>
+<td>
+<h:column>
+<f:facet name="header" class="warning">
+ <h:outputText value="cv" />
+</f:facet>							
+<h:outputText value="#{rous.cv}" />
+</h:column>
+</td>
+
+<td>
+<h:column>
+<f:facet name="header" class="warning">
+ <h:outputText value="Update" />
+</f:facet>
+<h:commandButton action="#{resourcesBean.MiseAJourRe(rous)}" value="Update" class="btn btn-primary"/> 
+</h:column>
+</td>
+<td>
+<h:column>
+<f:facet name="header" class="warning">
+ <h:outputText value="Delete" />
+</f:facet>
+<h:commandButton action="#{resourcesBean.DeleteResources(rous.userId)}" value="Delete" class="btn btn-primary"/> 
+</h:column>
+</td>
+
+</tbody>
+</thead>
+</h:dataTable>
+</div>
+</div>
+</h:form>
+<br/>
+<br/>
+<h:form enctype="multipart/form-data">
+     	<h2 id="h2">Add Resources:<a class="anchorjs-link" href="#h2.-bootstrap-heading"><span class="anchorjs-icon"></span></a></h2>
+
+ <div class="well1 white">
+ <div class="form-floating ng-pristine ng-invalid ng-invalid-required ng-valid-email ng-valid-url ng-valid-pattern" novalidate="novalidate" ng-submit="submit()">
+
+
+          <fieldset>
+            <div class="form-group">
+<h:outputText value="nom" class="control-label" />
+
+<h:inputText id="nomm" value="#{resourcesBean.nom}" class="form-control1 ng-invalid ng-invalid-required ng-touched" ng-model="model.name" required="true" requiredMessage="the Name please!!"/>
+             <h:message for="nomm" style="color:green"/>
+
+</div>
+<div class="form-group">
+<h:outputText value="Last Name" class="control-label"  />
+<h:inputText id="prenom" value="#{resourcesBean.prenom}" class="form-control1 ng-invalid ng-invalid-required ng-touched" ng-model="model.name" required="true" requiredMessage="the Last Name please!!" />
+  <h:message for="prenom" style="color:green"/>
+</div>
+<div class="form-group">
+<h:outputText value="mail" class="control-label" />
+<h:inputText id="mail" value="#{resourcesBean.email}" class="form-control1 ng-invalid ng-invalid-required ng-touched" ng-model="model.name" required="true" requiredMessage="the Mail please!!"/>
+  <h:message for="mail" style="color:green"/>
+</div>
+<div class="form-group">
+<h:outputText value="Password" class="control-label" />
+<h:inputSecret id="password" value="#{resourcesBean.password}" class="form-control1 ng-invalid ng-invalid-required ng-touched" ng-model="model.name" required="true" requiredMessage="the password please!!"/>
+  <h:message for="password" style="color:green"/>
+</div>
+<div class="form-group">
+<h:outputText value="Street" class="control-label" />
+<h:inputText value="#{resourcesBean.rue}" class="form-control1 ng-invalid ng-invalid-required ng-touched" ng-model="model.name" />
+
+</div>
+<div class="form-group">
+<h:outputText value="city" class="control-label" />
+<h:inputText value="#{resourcesBean.ville}" class="form-control1 ng-invalid ng-invalid-required ng-touched" ng-model="model.name"/>
+</div>
+<div class="form-group">
+<h:outputText value="country" class="control-label" />
+<h:inputText value="#{resourcesBean.pays}" class="form-control1 ng-invalid ng-invalid-required ng-touched" ng-model="model.name"/>
+</div>
+<div class="form-group">
+<h:outputText value="Postal code" class="control-label" />
+<h:inputText value="#{resourcesBean.codePostal}" class="form-control1 ng-invalid ng-invalid-required ng-touched" ng-model="model.name"/>
+</div>
+<div class="form-group">
+<h:outputText value="date Naissance" class="control-label"  />
+<h:inputText id="date" value="#{resourcesBean.dateNaissance}" class="form-control1 ng-invalid ng-invalid-required ng-touched" ng-model="model.name" > 
+
+  <f:convertDateTime pattern="dd-MM-yyyy"/>
+  </h:inputText>
+  <h:message for="date" style="color:red"/>
+  </div>
+  <div class="form-group">
+<h:outputText value="Seniority" class="control-label" />
+<h:inputText id="seniority" value="#{resourcesBean.seniority}" class="form-control1 ng-invalid ng-invalid-required ng-touched" ng-model="model.name" required="true" requiredMessage="your seniority please!!"/>
+  <h:message for="seniority" style="color:green"/>
+</div>
+  <div class="form-group">
+<h:outputText value="Skill" class="control-label" />
+<h:selectOneMenu id="competance" value="#{resourcesBean.competance}" class="form-control1 ng-invalid ng-invalid-required ng-touched" ng-model="model.name" required="true" requiredMessage="the skill please!!">
+  <f:selectItem  itemLabel="Select the skill" itemValue=""/>
+  <f:selectItems  value="#{data.competances}"/>
+  <h:message for="competance" style="color:green"/>
+</h:selectOneMenu>
+</div>
+  <div class="form-group">
+<h:outputText value="Resource Type" class="control-label" />
+<h:selectOneMenu id="type" value="#{resourcesBean.resourcetype}" class="form-control1 ng-invalid ng-invalid-required ng-touched" ng-model="model.name" required="true" requiredMessage="the Resource Type please!!">
+  <f:selectItem  itemLabel="Select the type" itemValue=""/>
+  <f:selectItems  value="#{data.resourcetype}"/>
+  <h:message for="type" style="color:green"/>
+</h:selectOneMenu>
+</div>
+
+ <div class="form-group">
+ <h:outputText value="CV" class="control-label" />
+<h:inputFile  id="uploader" value="#{resourcesBean.file}" validator="#{uploadBean.validate}" required="true" requiredMessage="the cv please!!"/>
+			
+		<h:message for="uploader"/>
+		</div>
+  <div class="form-group">
+<h:commandButton action="#{resourcesBean.addResources()}" value="Add" class="btn btn-primary" />
+<h:commandButton action="#{resourcesBean.UpdateResource()}" value="Update" class="btn btn-default" />
+</div>
+</fieldset>
+</div>
+</div>
+</h:form>
+                        		
+
+
+</ui:define>
+</ui:composition>
+
+

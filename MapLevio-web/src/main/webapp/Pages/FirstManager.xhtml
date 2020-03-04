@@ -1,0 +1,28 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	template="/template/layoutadmin.xhtml">
+
+	<ui:define name="title">******************HOME************</ui:define>
+	<ui:define name="content">
+	welcome #{loginBean.user.nom} #{loginBean.user.prenom} 
+	
+	
+		<h:link outcome="/pages/listClient" value=" Gerer Clients"/>
+		
+		
+		<h:link outcome="/pages/listResources" value=" Gerer Resources"/>
+		
+		
+	<h:link outcome="/pages/Management" value="Manage"/>
+		
+	
+	
+	
+	
+		</ui:define>
+	
+
+</ui:composition>
+	

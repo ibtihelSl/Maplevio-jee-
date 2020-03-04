@@ -1,0 +1,149 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	template="/template/layoutadmin.xhtml">
+	
+	
+	
+	<ui:define name="content">
+<h:form id="form">
+<h:panelGrid columns="2">
+<h:outputText value="prenom"/>
+<h:inputText value="#{clientBean.prenom}"/>
+
+<h:outputText value="nom"/>
+<h:inputText value="#{clientBean.nom}"/>
+<h:outputText value="email"/>
+<h:inputText id ="email" value="#{clientBean.email}"
+
+required="true"
+requiredMessage="required  email pattern " >
+
+<f:validateRegex pattern=".+\@.+\..+" />
+
+</h:inputText>
+<h:outputText value="password"/>
+
+<h:inputText id ="password" value="#{clientBean.password}"
+required="true"
+requiredMessage="required password " />
+
+<h:outputText value="ville"/>
+<h:inputText value="#{clientBean.ville}"/>
+
+<h:outputText value="pays"/>
+<h:inputText value="#{clientBean.pays}"/>
+
+<h:outputText value="code postal"/>
+<h:inputText value="#{clientBean.codePostal}"/>
+
+<h:outputText value="Pays"/>
+<h:inputText value="#{clientBean.pays}"/>
+
+<h:outputText value="Rue"/>
+<h:inputText value="#{clientBean.rue}"/>
+
+
+
+<h:message for="btn"/>
+<h:commandButton action="#{clientBean.refresh()}" value="Submit" />
+
+<h:message for="email"  style="color:red"/>
+<h:message for="password" style="color:red"/>
+
+
+
+</h:panelGrid>
+
+
+</h:form>
+
+	
+	
+<h:dataTable value="#{clientBean.clients}" var="client" border="1">
+<h:column>
+<f:facet name="header">
+<h:outputText value="Email" />
+</f:facet>
+<h:outputText value="#{client.email}" />
+</h:column>
+<h:column>
+<f:facet name="header">
+<h:outputText value="Nom" />
+</f:facet>
+<h:outputText value="#{client.nom}" />
+</h:column>
+<h:column>
+<f:facet name="header">
+<h:outputText value="Prenom" />
+</f:facet>
+<h:outputText value="#{client.prenom}" />
+</h:column>
+
+
+<h:column>
+<f:facet name="header">
+<h:outputText value="ville" />
+</f:facet>
+<h:outputText value="#{client.adresse.ville}" />
+</h:column>
+
+
+<h:column>
+<f:facet name="header">
+<h:outputText value="Code Postal" />
+</f:facet>
+<h:outputText value="#{client.adresse.codePostal}" />
+</h:column>
+
+
+<h:column>
+<f:facet name="header">
+<h:outputText value="Pays" />
+</f:facet>
+<h:outputText value="#{client.adresse.pays}" />
+</h:column>
+
+
+<h:column>
+<f:facet name="header">
+<h:outputText value="Rue" />
+</f:facet>
+<h:outputText value="#{client.adresse.rue}" />
+</h:column>
+
+
+<h:column>
+<f:facet name="header">
+<h:outputText value="Category" />
+</f:facet>
+<h:outputText value="#{client.clientCategory}" />
+</h:column>
+
+<h:column>
+<f:facet name="header">
+<h:outputText value="Type" />
+</f:facet>
+<h:outputText value="#{client.clientType}" />
+</h:column>
+
+<h:column>
+<f:facet name="header">
+<h:outputText value="Action" />
+</f:facet>
+
+<h:form id="form">
+<h:commandButton id="btnn" action="#{clientBean.supprimer(client.userId)}" value="supprimer" />
+<h:commandButton action="#{clientBean.modifier(client)}" value="modifier" />
+</h:form>
+
+
+</h:column>
+
+
+</h:dataTable>
+	
+	
+	</ui:define>
+	</ui:composition>

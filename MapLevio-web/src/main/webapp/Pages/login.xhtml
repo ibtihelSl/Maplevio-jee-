@@ -1,0 +1,156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	template="/template/layout.xhtml">
+
+
+<ui:define name="login">
+
+
+ 
+	<h:form id ="form" >
+
+    <div class="form-group">
+     <label class="mb-2">Email address</label>
+	 <h:inputText value="#{loginBean.login}" name="form-username" placeholder="Username..." class="form-control" id="exampleInputEmail1" />
+     <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
+	
+	
+
+	 <div class="form-group">
+     <label class="mb-2">Password</label>
+	<h:inputSecret value="#{loginBean.password}"  name="form-password" placeholder="Password..." class="form-control" id="exampleInputPassword1"/>
+    </div>
+
+
+	
+	
+	 <div class="form-group">
+    <label class="mb-2">Role</label>
+<h:selectOneMenu value="#{loginBean.role}"  required="true" requiredMessage="Please select a question">
+<f:selectItem itemLabel="selectionner le role" itemValue="#{null}" />
+<f:selectItems value="#{dataa.roles}" required="true" >
+</f:selectItems>
+
+</h:selectOneMenu>
+  </div>
+
+
+	
+	
+	
+	<h:commandButton id="btn" action="#{loginBean.doLogin()}" value="login"  class="btn btn-primary submit mb-4"/>
+	<h:message for="btn"/>
+	
+		 <h:panelGrid title="Sign">
+		  <h:link outcome="/pages/addCandidate" value="Appliquer candidature" class="btn-link"/>
+		  </h:panelGrid>
+		
+	
+	</h:form>
+
+	             
+
+	
+	</ui:define>
+	
+	<ui:define name="register">
+	             
+
+		<h:form enctype="multipart/form-data" id ="form2">
+
+			
+				 <div class="form-group">
+                    <label class="mb-2">Prenom</label>
+				<h:inputText id="prenom" value="#{candidateBean1.prenom}"
+					required="true" requiredMessage="********  required ***** " class="form-control" />
+				<h:message for="prenom" style="color:red" />
+			     </div>
+			 
+				 <div class="form-group">
+                     <label class="mb-2">Nom    </label>
+				<h:inputText id="name" value="#{candidateBean1.nom}" required="true"
+					requiredMessage="********* required  ******** "  class="form-control"/>
+				<h:message for="name" style="color:red" />
+				
+			</div>
+			
+				 <div class="form-group">
+                 <label class="mb-2">Email     </label>
+				<h:inputText id="email" value="#{candidateBean1.email}" class="form-control"
+					required="true" requiredMessage="required  email pattern ">
+
+					<f:validateRegex pattern=".+\@.+\..+" />
+
+				</h:inputText>
+				
+				<h:message for="email" style="color:red" />
+				
+				</div>
+
+
+
+				 <div class="form-group">
+                     <label class="mb-2">Password</label>
+				<h:inputSecret id="password" value="#{candidateBean1.password}"  class="form-control"/>
+				<h:message for="password" style="color:red" />
+				
+				  </div>
+
+					 <div class="form-group">
+                      <label class="mb-2">Rue</label>
+				<h:inputText value="#{candidateBean1.rue}" class="form-control" />
+				
+				  </div>
+
+				 <div class="form-group">
+                      <label class="mb-2">Ville</label>
+				<h:inputText value="#{candidateBean1.ville}" class="form-control" />
+				
+				  </div>
+
+				 <div class="form-group">
+                      <label class="mb-2">Pays</label>
+				<h:inputText value="#{candidateBean1.pays}" class="form-control" />
+				
+				  </div>
+
+				 <div class="form-group">
+                      <label class="mb-2">Code Postal  </label>
+				<h:inputText value="#{candidateBean1.codePostal}" class="form-control"/>
+				
+				  </div>
+
+
+				 <div class="form-group">
+                      <label class="mb-2">Ajouter Votre Photo   </label>
+				<h:inputFile value="#{candidateBean1.file}" class="form-control" />
+				
+				  </div>
+
+				 <div class="form-group">
+                      <label class="mb-2">Ajouter votre CV</label>
+				<h:inputFile value="#{candidateBean1.cv}"  class="form-control"/>
+				
+				
+				
+				  </div>
+
+
+			
+			<h:commandButton value="Valider"
+				action="#{candidateBean1.addEmploye()}" 
+				 class="btn btn-primary submit mb-4" />
+
+
+
+
+
+		</h:form>
+
+	
+	</ui:define>
+	</ui:composition>

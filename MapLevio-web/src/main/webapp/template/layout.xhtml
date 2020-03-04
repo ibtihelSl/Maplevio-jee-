@@ -1,0 +1,236 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
+    <title><ui:insert name="title" /></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta charset="utf-8"/>
+    <meta name="keywords" content="Replenish a Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+    <script>
+        addEventListener("load", function() {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+    <link href="../resources/Front/css/bootstrap.css" rel='stylesheet' type='text/css' />
+    <link href="../resources/Front/css/zoomslider.css" rel='stylesheet' type='text/css' />
+    <link href="../resources/Front/css/style6.css" rel='stylesheet' type='text/css' />
+    <link href="../resources/Front/css/style.css" rel='stylesheet' type='text/css' />
+    <link href="../resources/Front/css/fontawesome-all.css" rel="stylesheet"/>
+    <link href="//fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700" rel="stylesheet"/>
+    <link href="//fonts.googleapis.com/css?family=Quicksand:300,400,500,700" rel="stylesheet"/>
+</h:head>
+
+<body>
+ <ui:insert name="content">
+<div id="demo-1" data-zs-src='["../resources/Front/images/1.jpg", "../resources/Front/images/2.jpg","../resources/Front/images/3.jpg", "../resources/Front/images/4.jpg"]' data-zs-overlay="dots">
+        <div class="demo-inner-content">
+   		<ui:include src="/template/headerlayout.xhtml" />
+   
+		<ui:include src="/template/Menu.xhtml" />
+^
+            <!--/banner-info-w3layouts-->
+            <div class="banner-info-w3layouts text-center">
+
+                <h3>
+                    <span>Find the Right Job</span> .
+                    <span>Right Now.</span>
+                </h3>
+                <p>Your job search starts and ends with us.</p>
+
+                <form action="#" method="post" class="ban-form row">
+                    <div class="col-md-3 banf">
+                        <input class="form-control" type="text" name="Name" />
+                    </div>
+                    <div class="col-md-3 banf">
+                        <select class="form-control" id="country12">
+                            <option>Location</option>
+                            <option>Afghanistan</option>
+                            <option>Alaska</option>
+                            <option>Andong</option>
+                            <option>Bologna</option>
+                            <option>Canada</option>
+                            <option>France</option>
+                            <option>Germany</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3 banf">
+                        <select id="country13" class="form-control">
+                            <option>Finance Sector</option>
+                            <option>Banking Sector</option>
+                            <option> Engineering Sector</option>
+                            <option>Accounting Jobs</option>
+                            <option>Interior Design</option>
+                            <option>Export Import Jobs</option>
+                        </select>
+
+                    </div>
+                    <div class="col-md-3 banf">
+                        <button class="btn1" type="submit">FIND JOB
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+            </div>
+            </div>
+            
+            <!--//banner-info-w3layouts-->
+       
+  </ui:insert>
+    <!-- banner-text -->
+    <!-- banner-bottom-wthree -->
+           <div class="footer-emp-w3layouts bg-dark dotts py-lg-5 py-3">
+                    <div class="container-fluid px-lg-5 px-3">
+                        		<ui:insert src="/template/footer.xhtml"/>
+                    
+            </div>
+           </div>
+  
+
+    <!--model-forms-->
+    <!--/Login-->
+    <div class="modal fade" id="exampleModalCenter" >
+        <div class="modal-dialog modal-dialog-centered" >
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <button type="button" class="close">
+                        <span >&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    <div class="login px-4 mx-auto mw-100">
+                        <h5 class="text-center mb-4">Login Now</h5>
+                        
+                        <ui:insert name="login">
+                        </ui:insert>
+                   
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!--//Login-->
+    <!--/Register-->
+    <div class="modal fade" id="exampleModalCenter2" >
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <button type="button" class="close">
+                        <span >&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="login px-4 mx-auto mw-100">
+                        <h5 class="text-center mb-4">Register Now</h5>
+                        <ui:insert name="register">
+                        </ui:insert>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!--//Register-->
+
+    <!--//model-form-->
+    <!-- js -->
+    <!--/slider-->
+    <script src="../resources/Front/js/jquery-1.11.1.min.js"></script>
+    <script src="../resources/Front/js/modernizr-2.6.2.min.js"></script>
+    <script src="../resources/Front/js/jquery.zoomslider.min.js"></script>
+    <!--//slider-->
+    <!--search jQuery-->
+    <script src="../resources/Front/js/classie-search.js"></script>
+    <script src="../resources/Front/js/demo1-search.js"></script>
+    <!--//search jQuery-->
+
+    <script>
+        $(document).ready(function() {
+            $(".dropdown").hover(
+                function() {
+                    $('.dropdown-menu', this).stop(true, true).slideDown("fast");
+                    $(this).toggleClass('open');
+                },
+                function() {
+                    $('.dropdown-menu', this).stop(true, true).slideUp("fast");
+                    $(this).toggleClass('open');
+                }
+            );
+        });
+    </script>
+    <!-- //dropdown nav -->
+    <!-- password-script -->
+    <script>
+        window.onload = function() {
+            document.getElementById("password1").onchange = validatePassword;
+            document.getElementById("password2").onchange = validatePassword;
+        }
+
+        function validatePassword() {
+            var pass2 = document.getElementById("password2").value;
+            var pass1 = document.getElementById("password1").value;
+            if (pass1 != pass2)
+                document.getElementById("password2").setCustomValidity("Passwords Don't Match");
+            else
+                document.getElementById("password2").setCustomValidity('');
+            //empty string means no validation error
+        }
+    </script>
+    <!-- //password-script -->
+
+    <!-- stats -->
+    <script src="../resources/Front/js/jquery.waypoints.min.js"></script>
+    <script src="../resources/Front/js/jquery.countup.js"></script>
+    <script>
+        $('.counter').countUp();
+    </script>
+    <!-- //stats -->
+
+    <!-- //js -->
+    <script src="../resources/Front/js/bootstrap.js"></script>
+    <!--/ start-smoth-scrolling -->
+    <script src="../resources/Front/js/move-top.js"></script>
+    <script src="../resources/Front/js/easing.js"></script>
+    <script>
+        jQuery(document).ready(function($) {
+            $(".scroll").click(function(event) {
+                event.preventDefault();
+                $('html,body').animate({
+                    scrollTop: $(this.hash).offset().top
+                }, 900);
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function() {
+            /*
+            						var defaults = {
+            							  containerID: 'toTop', // fading element id
+            							containerHoverID: 'toTopHover', // fading element hover id
+            							scrollSpeed: 1200,
+            							easingType: 'linear' 
+            						 };
+            						*/
+
+            $().UItoTop({
+                easingType: 'easeOutQuart'
+            });
+
+        });
+    </script>
+    <ui:insert name="scripts"></ui:insert>
+    <!--// end-smoth-scrolling -->
+</body>
+
+</html>

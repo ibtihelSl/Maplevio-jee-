@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:f="http://java.sun.com/jsf/core">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	template="/template/layoutadmin.xhtml"
+	xmlns:p="http://primefaces.org/ui">
+<ui:define name="title">Ajouter un projet a un Employe:</ui:define>
+<ui:define name="content">
+
+	<h:form enctype="multipart/form-data">
+	<center>
+			<h1>Add new Client</h1>
+	<p:panel id="panel" header="Client Form" style="margin-bottom:10px;">
+	<p:messages id="messages" />
+        <h:panelGrid columns="1" cellpadding="4">
+        			
+   <h:outputLabel value="Name :"></h:outputLabel>
+   <h:inputText value="#{clientBean.nom}" id="name" requiredMessage="fill the client name" required="true" />
+	<p:message for="name" style="color: red"/>
+	
+	
+	 <h:outputLabel value="Email :"></h:outputLabel>
+	<h:inputText value="#{clientBean.email}" id="email" requiredMessage="fill the client email" required="true" />
+	
+	<p:message for="email" style="color: red"/>
+	
+	<h:outputLabel value="Password :"></h:outputLabel>
+	<h:inputText value="#{clientBean.password}" id="pwd" requiredMessage="fill the client password" required="true" />
+	
+	<p:message for="pwd" style="color: red"/>
+	
+
+
+<h:outputLabel  for ="ClientCat" value="Client Cat :" />
+<h:selectOneMenu  id="ClientCat"  value="#{clientBean.clientCategory}" style="width:100px" required="true" requiredMessage="chose category">
+
+  <f:selectItem  itemLabel="Selectionner le cat" itemValue=""/>
+  <f:selectItems value="#{data.clientCategory}"/>
+
+
+</h:selectOneMenu>
+<h:commandButton id="btn" action="#{clientBean.addClient()}" value="Add new client" outcome="/pages/AffClient" />
+
+<h:message for="btn"/> 
+
+
+
+
+</h:panelGrid>
+</p:panel>
+</center>
+
+</h:form>
+
+
+</ui:define>
+</ui:composition>
+</html>
